@@ -1,0 +1,10 @@
+int mod =1e9 +7;
+		int NthTerm(int n){
+		    long long int i=1,t=2,inc=2;
+		    while(i<n){
+		        t=((t*inc)+1)%mod;
+		        i++;
+		        inc++;
+		    }
+		    return t;
+		}
