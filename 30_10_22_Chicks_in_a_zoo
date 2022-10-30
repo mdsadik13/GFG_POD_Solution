@@ -1,0 +1,13 @@
+vector<long long int> arr(n,0);
+	    arr[0]=1;
+	    long long int cur=1;
+	    for(int i=1;i<n;i++){
+	        if(i>=6){
+	            cur-=arr[i-6];
+	            arr[i-6]=0;
+	        }
+	        
+	        arr[i]=2*cur;
+	        cur+=arr[i];
+	    }
+	    return cur;
