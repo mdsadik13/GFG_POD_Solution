@@ -1,0 +1,23 @@
+int removals(vector<int>& arr, int k){
+        int n=arr.size();
+        sort(arr.begin(),arr.end());
+        int i=0,j=0,ans=INT_MAX;
+        while(j<n){
+            if(arr[j]-arr[i]>k){
+                break;
+            }
+            j++;
+        }
+        ans=n-j;
+        while(i<n){
+            while(j<n){
+                if(arr[j]-arr[i]>k){
+                break;
+            }
+            j++;
+            }
+            ans=min(ans,i+(n-j));
+            i++;
+        }
+        return ans;
+    }
