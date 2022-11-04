@@ -1,0 +1,12 @@
+ string baseEquiv(int n, int m){
+        int i=2;
+        while(i<=32){
+            int check=(log(n)/log(i))+1;
+            if(check==m){
+                return "Yes";
+            }
+            i++;
+        }
+        
+        return "No";
+    }
