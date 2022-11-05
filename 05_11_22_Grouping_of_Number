@@ -1,0 +1,23 @@
+int maxGroupSize(int arr[], int N, int K) {
+        vector<int> count(K+1,0);
+        for(int i=0;i<N;i++){
+            count[arr[i]%K]++;
+        }
+        
+        int ans=0;
+        for(int i=1;i<=K/2;i++){
+            if(K%2==0&&i==K/2){
+                if(count[i]!=0){
+                    ans+=1;
+                }
+                continue;
+            }
+            ans+=max(count[i],count[K-i]);
+            
+        }
+        
+        if(count[0]!=0){
+            ans+=1;
+        }
+        return ans;
+    }
